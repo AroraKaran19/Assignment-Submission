@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NavLinks from "./NavLinks";
 
 const Navbar = () => {
@@ -214,9 +214,34 @@ const Navbar = () => {
     }
   };
 
+  const [isSticky, setIsSticky] = useState<boolean>(false);
+  let lastScrollY = useRef<number>(0);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0 && window.scrollY < lastScrollY.current) {
+      setIsSticky(true);
+      console.log("scrolling up");
+    } else {
+      setIsSticky(false);
+      console.log("scrolling down");
+    }
+    lastScrollY.current = window.scrollY;
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <div className="navbar w-full">
+      <div
+        className={`navbar w-full max-w-screen relative ${
+          isSticky ? "sticky" : ""
+        }`}
+      >
         {/* Mobile Wrapper */}
         <div
           className={`nav-wrapper top-0 left-0 hidden sm:block absolute transition-all duration-500 ease-in-out ${
@@ -291,15 +316,19 @@ const Navbar = () => {
               )}
             </svg>
           </div>
-          <div className="logo-box flex-1 flex justify-center items-center sm:justify-start">
-            <img src="/TP-logo.webp" alt="logo" />
+          <div className="logo-box flex-1 flex justify-center items-center sm:justify-start px-[0.8rem] sm:px-1">
+            <img
+              src="/TP-logo.webp"
+              alt="logo"
+              className="min-h-9 min-w-auto min-w-36"
+            />
           </div>
-          <div className="nav-links flex-none sm:hidden flex justify-center items-center gap-4">
+          <div className="nav-links flex-none sm:hidden flex justify-center items-center gap-4 flex-wrap shrink">
             {menu.map((item) => (
               <NavLinks key={item.index} {...item} />
             ))}
           </div>
-          <div className="authentication-box flex-1 sm:flex-none flex justify-center items-center sm:justify-end">
+          <div className="authentication-box flex-1 sm:flex-none flex justify-center items-center sm:justify-end px-[0.8rem] sm:px-2">
             <div className="authentication-btn w-full h-full flex justify-center items-center gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -307,15 +336,22 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="h-[25%]"
+                className="h-[25%] sm:h-[50%] sm:w-full"
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                  className="sm:hidden"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                  className="hidden sm:block"
                 />
               </svg>
-              <span>Login</span>
+              <span className="sm:hidden">Login</span>
             </div>
           </div>
         </div>

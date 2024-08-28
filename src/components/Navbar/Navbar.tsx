@@ -238,7 +238,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`navbar w-full max-w-screen relative ${
+        className={`navbar z-[2000] bg-white w-full max-w-screen relative ${
           isSticky ? "sticky" : ""
         }`}
       >

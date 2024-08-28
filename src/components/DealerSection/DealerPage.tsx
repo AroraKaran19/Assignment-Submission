@@ -41,7 +41,7 @@ const DealerPage = ({
 
   return (
     <>
-      <div className="dealer-info-container h-full flex flex-col justify-center bg-white gap-5 flex-wrap sm:w-full p-10">
+      <div className="dealer-info-container h-full flex flex-col justify-center bg-white gap-5 flex-wrap sm:w-full px-10">
         <div className="dealer-photos w-full max-w-full">
           <Carousel items={photos} />
         </div>
@@ -61,7 +61,7 @@ const DealerPage = ({
             />
           </div>
           <div className="dealer-more-info-container w-[30%] h-full gap-10 flex flex-col sm:w-full">
-            <div className="payment-section w-full flex flex-col">
+            <div className="section-container w-full flex flex-col">
               <PaymentSection />
             </div>
             <div className="section-container flex flex-col">

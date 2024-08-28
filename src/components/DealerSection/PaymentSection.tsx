@@ -3,7 +3,7 @@ import React from "react";
 const PaymentSection = () => {
   return (
     <>
-      <p className="payment-section-heading">Payment Mode Accepted</p>
+      <p className="heading">Payment Mode Accepted</p>
       <div className="payment-methods">
         {[
           "Deposit to Account",

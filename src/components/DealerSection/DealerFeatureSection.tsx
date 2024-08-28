@@ -16,7 +16,7 @@ const DealerFeatureSection = ({
 }: DealerFeatureSectionProps) => {
   return (
     <>
-      <div className="section-container h-full w-full flex flex-col">
+      <div className="section-container h-full w-full flex flex-col gap-6">
         <div className="dealer-description">
           <div className="heading">
             <p>Description</p>

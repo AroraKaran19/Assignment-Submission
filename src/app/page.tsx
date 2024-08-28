@@ -21,7 +21,7 @@ const page = () => {
     name: "SHREE HEMKUNT TYRES AND SERVICES",
     verified: true,
     address:
-      "PLOT NUMBER-09 GROUND FLOOR CISF CAMPUS ROAD, AHINSA KHAND-02 INDIRAPURAM, Ghaziabad, Uttar Pradesh, 201014",
+      "Plot No-09 Ground Floor CISF Campus Road, Ahinsa Khand-02 Indirapuram, Ghaziabad, Uttar Pradesh, 201014",
     dealsin: [
       {
         brand: "MRF",
@@ -88,34 +88,34 @@ const page = () => {
     ],
     photos: [
       {
-        imageUrl: "https://via.placeholder.com/150",
+        imageUrl:
+          "https://lh3.googleusercontent.com/places/AAcXr8ryfQqAWHDmAPXAuK5o1Sk81OiWbLXHHNRm8OTBLFZE41-3arlK-Q7aMXjXp106o8p8Dca6OTnSTynW6ykkg86zy1-j4JRkpXI=s1600-w300",
       },
       {
-        imageUrl: "https://via.placeholder.com/150",
+        imageUrl:
+          "https://lh3.googleusercontent.com/places/AAcXr8ryfQqAWHDmAPXAuK5o1Sk81OiWbLXHHNRm8OTBLFZE41-3arlK-Q7aMXjXp106o8p8Dca6OTnSTynW6ykkg86zy1-j4JRkpXI=s1600-w300",
       },
       {
-        imageUrl: "https://via.placeholder.com/150",
+        imageUrl:
+          "https://lh3.googleusercontent.com/places/AAcXr8ryfQqAWHDmAPXAuK5o1Sk81OiWbLXHHNRm8OTBLFZE41-3arlK-Q7aMXjXp106o8p8Dca6OTnSTynW6ykkg86zy1-j4JRkpXI=s1600-w300",
       },
       {
-        imageUrl: "https://via.placeholder.com/150",
+        imageUrl:
+          "https://lh3.googleusercontent.com/places/AAcXr8ryfQqAWHDmAPXAuK5o1Sk81OiWbLXHHNRm8OTBLFZE41-3arlK-Q7aMXjXp106o8p8Dca6OTnSTynW6ykkg86zy1-j4JRkpXI=s1600-w300",
       },
       {
-        imageUrl: "https://via.placeholder.com/150",
+        imageUrl:
+          "https://lh3.googleusercontent.com/places/AAcXr8ryfQqAWHDmAPXAuK5o1Sk81OiWbLXHHNRm8OTBLFZE41-3arlK-Q7aMXjXp106o8p8Dca6OTnSTynW6ykkg86zy1-j4JRkpXI=s1600-w300",
       },
       {
-        imageUrl: "https://via.placeholder.com/150",
-      },
-      {
-        imageUrl: "https://via.placeholder.com/150",
-      },
-      {
-        imageUrl: "https://via.placeholder.com/150",
+        imageUrl:
+          "https://lh3.googleusercontent.com/places/AAcXr8ryfQqAWHDmAPXAuK5o1Sk81OiWbLXHHNRm8OTBLFZE41-3arlK-Q7aMXjXp106o8p8Dca6OTnSTynW6ykkg86zy1-j4JRkpXI=s1600-w300",
       },
     ],
   };
 
   return (
-    <div className="w-full h-[120vh]">
+    <div className="main-page w-full">
       <div className="white-box-container w-full flex flex-col items-center mt-5 relative">
         {/* Dealer Info */}
         <DealerPage {...dealerInfo} />

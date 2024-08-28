@@ -5,10 +5,10 @@ const DealerShopSection = ({ address }: { address: string }) => {
     <>
       <div className="dealer-shop-address flex-auto flex flex-col gap-4 sm:items-center sm:justify-center">
         <p className="sm:text-center">Address: {address}</p>
-        <div className="get-directions-btn flex">
+        <div className="get-directions-btn flex items-center">
           <a
             href="https://maps.app.goo.gl/eABcdcg3siKWUdy17"
-            className="px-6 py-2 bg-yellow-200 rounded-xl"
+            className="directions-btn bg-[#1a73e8] px-6 py-2 text-white rounded-md"
           >
             Get Directions
           </a>

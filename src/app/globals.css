@@ -116,7 +116,7 @@
 }
 
 .dealer-info-container {
-  width: clamp(0rem, 80vw, 70.625rem);
+  width: clamp(0rem, 90vw, 70.625rem);
 }
 
 .dealer-info-container .dealer-more-container .section-container,
@@ -133,16 +133,12 @@
 .dealer-info-container .dealer-more-container .section-container .heading {
   font-size: clamp(0.5rem, 5vw, 1.5rem);
   font-weight: 600;
+  margin-bottom: clamp(0.5rem, 5vw, 1rem);
 }
 
-.dealer-info-container .dealer-more-container .payment-section .payment-section-heading {
+.dealer-info-container .dealer-more-container .payment-section-heading {
   font-size: clamp(0.5rem, 5vw, 1rem);
   font-weight: 600;
-}
-
-.dealer-info-container .dealer-more-container .payment-section .payment-methods {
-  padding: clamp(0rem, 5vw, 0.5rem);
-  padding-bottom: 0;
 }
 
 .dealer-info-container .dealer-more-container .section-container .customer-review {
@@ -151,8 +147,22 @@
   border-radius: clamp(0.5rem, 5vw, 1rem);
 }
 
+/* Footer */
+
+.footer {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.footer .footer-ask-question {
+  padding: clamp(1rem, 5vw, 2rem) clamp(0rem, 5vw, 10rem);
+}
+
+.footer .footer-content {
+  padding: clamp(1rem, 5vw, 3rem) clamp(2rem, 5vw, 6rem);
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
   .dealer-info-container {
-    width: clamp(0rem, 90vw, 70.625rem);
+    width: clamp(0rem, 100vw, 70.625rem);
   }
 }

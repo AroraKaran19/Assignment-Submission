@@ -4,14 +4,17 @@ import React, { useRef, useState, useEffect } from "react";
 interface CarouselProps {
   items: { imageUrl: string }[];
   name?: string;
-  autoChange?: boolean;
-  interval?: number;
+  customItemHeight?: string;
+  customItemWidth?: string;
+  className?: string;
 }
 
 const Carousel = ({
   items,
-  autoChange = false,
-  interval = 3000,
+  name,
+  customItemHeight,
+  customItemWidth,
+  className,
 }: CarouselProps) => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -29,7 +32,7 @@ const Carousel = ({
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isDragging || !carouselRef.current) return;
     const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Adjust scroll speed
+    const walk = (x - startX) * 1; // Adjust scroll speed
     carouselRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -40,18 +43,6 @@ const Carousel = ({
   const handleMouseLeave = () => {
     setIsDragging(false);
   };
-
-  useEffect(() => {
-    if (autoChange && carouselRef.current) {
-      const intervalId = setInterval(() => {
-        if (carouselRef.current) {
-          carouselRef.current.scrollLeft += 300; // Change 300 to the width of your carousel items
-        }
-      }, interval);
-
-      return () => clearInterval(intervalId);
-    }
-  }, [autoChange, interval]);
 
   return (
     <div
@@ -65,16 +56,14 @@ const Carousel = ({
       onMouseLeave={handleMouseLeave}
     >
       {items.map((item, index) => (
-        <div
-          key={index}
-          className={`carousel-item flex-shrink-0 w-[300px] h-[300px] select-none`}
-          style={{
-            backgroundImage: `url(${item?.imageUrl})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          hey
+        <div key={index} className={`carousel-item flex-shrink-0 select-none`}>
+          <img
+            src={item?.imageUrl}
+            draggable={false}
+            className={`${customItemWidth ? customItemWidth : "w-auto"} ${
+              customItemHeight ? customItemHeight : "h-auto"
+            } ${className ? className : ""}`}
+          />
         </div>
       ))}
     </div>

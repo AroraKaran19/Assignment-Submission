@@ -8,10 +8,10 @@ interface DealerNameSectionProps {
 const DealerNameSection = ({ name, verified }: DealerNameSectionProps) => {
   return (
     <>
-      <div className="dealer-name w-full flex sm:flex-col">
+      <div className="dealer-name w-full flex sm:flex-col gap-3">
         <h2 className="text-2xl font-bold">{name}</h2>
         {verified && (
-          <div className="verified-icon flex items-center gap-0.5">
+          <div className="verified-icon flex items-center select-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="black"

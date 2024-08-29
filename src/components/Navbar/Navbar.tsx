@@ -220,10 +220,8 @@ const Navbar = () => {
   const handleScroll = () => {
     if (window.scrollY > 0 && window.scrollY < lastScrollY.current) {
       setIsSticky(true);
-      console.log("scrolling up");
     } else {
       setIsSticky(false);
-      console.log("scrolling down");
     }
     lastScrollY.current = window.scrollY;
   };
@@ -265,14 +263,14 @@ const Navbar = () => {
               ))}
             </div>
             <div className="menu-footer w-full h-16 flex justify-center items-center">
-              <div className="authentication-btn w-full h-full flex justify-center items-center gap-1">
+              <div className="authentication-btn w-fit h-fit flex justify-center items-center gap-1 px-3 py-2 rounded-lg bg-slate-700 hover:bg-slate-600 text-white cursor-pointer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="h-[25%]"
+                  className="h-4"
                 >
                   <path
                     strokeLinecap="round"
@@ -320,7 +318,8 @@ const Navbar = () => {
             <img
               src="/TP-logo.webp"
               alt="logo"
-              className="min-h-9 min-w-auto min-w-36"
+              className="min-h-9 min-w-auto min-w-36 hover:cursor-pointer"
+              onClick={() => window.location.replace("/")}
             />
           </div>
           <div className="nav-links flex-none sm:hidden flex justify-center items-center gap-4 flex-wrap shrink">
@@ -329,14 +328,14 @@ const Navbar = () => {
             ))}
           </div>
           <div className="authentication-box flex-1 sm:flex-none flex justify-center items-center sm:justify-end px-[0.8rem] sm:px-2">
-            <div className="authentication-btn w-full h-full flex justify-center items-center gap-1">
+            <div className="authentication-btn flex justify-center items-center gap-1 px-4 py-2 rounded-lg bg-slate-700 hover:bg-slate-600 text-white cursor-pointer sm:bg-white sm:hover:bg-black/10 sm:rounded-full sm:text-black sm:justify-end sm:p-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="h-[25%] sm:h-[50%] sm:w-full"
+                className="h-6 sm:h-8"
               >
                 <path
                   strokeLinecap="round"

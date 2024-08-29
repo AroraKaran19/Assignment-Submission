@@ -5,8 +5,8 @@ interface Dealer {
   name: string;
   verified: boolean;
   address: string;
-  dealsin: { brand: string; logoUrl: string }[];
-  services: { service: string; logoUrl: string }[];
+  dealsin: { imageUrl: string; name: string }[];
+  services: { imageUrl: string; name: string }[];
   reviews: {
     profilePhotoUrl: string;
     name: string;
@@ -24,34 +24,37 @@ const page = () => {
       "Plot No-09 Ground Floor CISF Campus Road, Ahinsa Khand-02 Indirapuram, Ghaziabad, Uttar Pradesh, 201014",
     dealsin: [
       {
-        brand: "MRF",
-        logoUrl: "https://via.placeholder.com/150",
+        name: "MRF",
+        imageUrl: "https://www.mrftyres.com/images/mrf-logo.png",
       },
       {
-        brand: "CEAT",
-        logoUrl: "https://via.placeholder.com/150",
+        name: "CEAT",
+        imageUrl: "https://www.ceat.com/content/dam/ceat/website/logo.png",
       },
       {
-        brand: "JK Tyre",
-        logoUrl: "https://via.placeholder.com/150",
+        name: "JK Tyre",
+        imageUrl: "https://www.jktyre.com/images/jk-logo.jpg",
       },
       {
-        brand: "Bridgestone",
-        logoUrl: "https://via.placeholder.com/150",
+        name: "Bridgestone",
+        imageUrl:
+          "https://www.bridgestoneamericas.com/content/dam/corpcomm/americas/assets/media-center/logos/bridgestone-logos/bridgestone-mark-logos/album-cover.png",
       },
       {
-        brand: "Apollo",
-        logoUrl: "https://via.placeholder.com/150",
+        name: "Apollo",
+        imageUrl: "https://shop.apollotyres.com/images/logo.png",
       },
     ],
     services: [
       {
-        service: "Wheel Balancing",
-        logoUrl: "https://via.placeholder.com/150",
+        name: "Wheel Balancing",
+        imageUrl:
+          "https://media.istockphoto.com/id/607978934/vector/mechanic.jpg?s=612x612&w=0&k=20&c=VDHmM4DpdPztrOIkLBM9bbg3x_TodZTet8AfwQ4NYMg=",
       },
       {
-        service: "Wheel Alignment",
-        logoUrl: "https://via.placeholder.com/150",
+        name: "Wheel Alignment",
+        imageUrl:
+          "https://media.istockphoto.com/id/607978934/vector/mechanic.jpg?s=612x612&w=0&k=20&c=VDHmM4DpdPztrOIkLBM9bbg3x_TodZTet8AfwQ4NYMg=",
       },
     ],
     reviews: [

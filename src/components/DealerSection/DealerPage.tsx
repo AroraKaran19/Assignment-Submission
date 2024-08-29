@@ -10,8 +10,8 @@ interface DealerInfoSectionProps {
   name: string;
   verified: boolean;
   address: string;
-  dealsin: { brand: string; logoUrl: string }[];
-  services: { service: string; logoUrl: string }[];
+  dealsin: { imageUrl: string; name: string }[];
+  services: { imageUrl: string; name: string }[];
   reviews: {
     profilePhotoUrl: string;
     name: string;
@@ -30,15 +30,6 @@ const DealerPage = ({
   reviews,
   photos,
 }: DealerInfoSectionProps) => {
-  const dealer_deal_logos = dealsin.map((deal) => ({ imageUrl: deal.logoUrl }));
-  const dealer_deal_brands = dealsin.map((deal) => ({ name: deal.brand }));
-  const dealer_service_logos = services.map((service) => ({
-    imageUrl: service.logoUrl,
-  }));
-  const dealer_service_names = services.map((service) => ({
-    name: service.service,
-  }));
-
   return (
     <>
       <div className="dealer-info-container h-full flex flex-col justify-center bg-white gap-5 flex-wrap sm:w-full px-10">
@@ -54,17 +45,15 @@ const DealerPage = ({
         <div className="dealer-more-container relative w-full flex rounded-xl gap-6 h-fit sm:flex-col">
           <div className="dealer-feature-container w-[70%] flex flex-col gap-10 sm:w-full">
             <DealerFeatureSection
-              dealer_deal_logos={dealer_deal_logos}
-              dealer_brand_names={dealer_deal_brands}
-              dealer_service_logos={dealer_service_logos}
-              dealer_service_names={dealer_service_names}
+              dealer_deal_logos={dealsin}
+              dealer_service_logos={services}
             />
           </div>
           <div className="dealer-more-info-container w-[30%] h-full gap-10 flex flex-col sm:w-full">
-            <div className="section-container w-full flex flex-col">
+            <div className="payment-section section-container w-full flex flex-col">
               <PaymentSection />
             </div>
-            <div className="section-container flex flex-col">
+            <div className="customer-review-section section-container flex flex-col">
               <ReviewSection reviews={reviews} />
             </div>
           </div>

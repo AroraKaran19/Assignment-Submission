@@ -9,9 +9,11 @@ const DealerNameSection = ({ name, verified }: DealerNameSectionProps) => {
   return (
     <>
       <div className="dealer-name w-full flex sm:flex-col gap-3">
-        <h2 className="text-2xl font-bold">{name}</h2>
+        <div className="name-container min-h-full flex items-center flex-wrap">
+          <p className="name">{name}</p>
+        </div>
         {verified && (
-          <div className="verified-icon flex items-center select-none">
+          <div className="verified-icon h-full flex items-center py-1 px-2 bg-white select-none rounded-lg sm:w-fit sm:self-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="black"
